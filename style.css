@@ -1,0 +1,242 @@
+
+/* Initialisation */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Mono", serif;
+}
+
+
+
+.nav-container {
+    width: 100%;
+    background-color: black;
+
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 90%;
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+#nav-logo {
+    color: white;
+    justify-self: start;
+    margin-left: 20px;
+}
+
+input[type="checkbox"]{
+    content: url(materiel/sun-svgrepo-com.svg);
+}
+
+#darkmode {
+    justify-self: start;
+    background-size: 3%;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    list-style: none;
+    text-align: center;
+    width: 70%;
+    justify-self: end;
+}
+
+.nav-links {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links:hover {
+    color: greenyellow;
+}
+
+.menu-toggle .bar{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+}
+
+
+.input-form{
+    padding: 18px 25px;
+    margin-bottom: 20px;
+    width: 500px;
+}
+  
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    padding-top: 50px;
+}
+
+.radio-btn{
+    padding-top: 20px;
+}
+
+.checkbox{
+    padding-top: 20px;
+}
+
+
+.titre-page{
+    font-size: 300%;
+    padding-top: 75px;
+    background-position: top;
+    background-image: url(../site/materiel/background-img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    position:relative;
+    align-items: center;  
+}
+
+.titre-section {
+    color: rgb(19, 121, 19);
+}
+
+.main-container {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.main-content {
+    margin-top: 60px;
+}
+
+.bloc {
+    color: rgb(19, 121, 19);
+}
+
+.bts {
+    margin-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+}
+
+.specialite{
+    margin-right: 75px;
+}
+
+.bloc{
+    margin-bottom: 15px;
+}
+
+.section-cv {
+    margin-inline: auto;
+}
+
+.pdf{
+    padding-top: 20px;
+    max-width: 100%;
+}
+
+.cv{
+    max-width: 30%;
+    margin-inline: auto;
+}
+
+table , td, th {
+	border: 1px solid black;
+}
+
+td, th {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.logo-plann{
+    height: 50px;
+    width: 50px;
+}
+
+.planning {
+    padding-bottom: 60px;
+    margin-bottom: 120px;
+}
+
+
+
+/*Début responsive WIP*/
+/* @media screen and (max-width: 768px) {
+
+    .nav-container {
+        position: relative;
+    }
+    
+    .nav-menu {
+        display: grid;
+        grid-template-columns: auto;
+        background: green;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    
+    }
+
+    #nav-logo {
+        margin-left: 20px;
+    }
+
+    .nav-menu.active {
+        background: grey;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links{
+        text-align: center;
+        line-height: 60px;
+        width: 100%;
+        display: table;
+    }
+    .nav-links:hover {
+        background-color: greenyellow;
+        color: white;
+        transition: all 0.4s ease-out;
+    }
+    .navbar {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+    
+    
+} */
+
+
+

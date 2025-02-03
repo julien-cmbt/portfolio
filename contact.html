@@ -1,0 +1,160 @@
+<!-- <a href Textuels done
+<a href Images Cliquables 
+<a href Sites Externe
+4
+
+
+<table hr
+<table td Images
+<table colspan rowspan
+4
+
+
+<form input Texte done
+<form input Cases à Cocher done
+<form input Boutons Radio done
+4
+
+Changement Style
+2
+
+Dossier Site Organisation
+2
+
+Bonnes pratiques...
+Nommage Dossiers Fichiers 
+Style Exclusivement CSS 
+2
+
+Lisibilité Code
+2 -->
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Julien Cambot</title>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="navbar">
+            <h1 id="nav-logo">Julien Cambot</h1>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-links">Acceuil</a></li>
+                <li><a href="documentation.html" class="nav-links">Documentation</a></li>
+                <li><a href="veille.html" class="nav-links">Veille</a></li>
+                <li><a href="contact.html" class="nav-links">Contact</a></li>
+                <li><input type="checkbox" id="darkmode"/>
+                <label class="nav-links" for="darkmode">switch mode</label></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div>
+            <h1 class="titre-page">Me Contacter</h1>
+        </div>
+        <div class="form">
+            <form>
+                <div>
+                    <input class="input-form" type="text" name="Nom" placeholder="Nom*">            
+                </div>
+                <div>
+                    <input class="input-form" type="text" name="Prenom" placeholder="Prenom*">            
+                </div>
+                <div>
+                    <input class="input-form" type="text" name="Email" placeholder="Email*">            
+                </div>
+                <div>
+                    <input class="input-form hauteur-50" type="text" name="message" placeholder="Votre message*">            
+                </div>
+                <div class="radio-btn">
+                    <p>Êtes-vous intéressé(e) par mon profil?</p>
+                    <input type="radio" id="oui" name="intéressé" value="oui">
+                    <label for="oui">oui</label>
+                    <input type="radio" id="non" name="intéressé" value="non">
+                    <label for="non">Non</label>
+                    <input type="radio" id="ssavis" name="intéressé" value="ssavis">
+                    <label for="ssavis">Sans Avis</label>
+                </div>
+                <div class="checkbox">
+                    <p>Quelle page avez vous visité?</p>
+                    <input type="checkbox" id="acceuil" name="acceuil">
+                    <label for="acceuil">Acceuil</label><br>
+                    <input type="checkbox" id="docu" name="docu">
+                    <label for="docu">Documentation</label><br>
+                    <input type="checkbox" id="veille" name="veille">
+                    <label for="veille">Veille</label><br>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="main-container">
+
+            <h1 class="titre-section">Mon planning</h1>
+            <table>
+                <hr>Vous trouverez ici mon planing pour savoir quand me contacter<hr>
+            </table>
+            <div class="planning">
+                <table>
+                    <tr>
+                        <td colspan="7">Planning</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                        <td rowspan="2"><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                        <td rowspan="5">Libre</td>
+                        <td>Libre</td>
+                        <td>Libre</td>
+                        <td rowspan="5">Samedi</td>
+                        <td rowspan="5">Dimanche</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                        <td><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Libre</td>
+                        <td colspan="2">Libre</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                        <td rowspan="2"><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                        <td><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                        <td><img src="../site/materiel/Logo_ENSITECH.png" alt="ensitech" class="logo-plann"></td>
+                    </tr>
+                    <tr>
+                        <td>Libre</td>
+                        <td>Libre</td>
+                    </tr>
+    
+                   
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
