@@ -27,8 +27,9 @@
 
 #nav-logo {
     color: white;
-    justify-self: start;
-    margin-left: 20px;
+    text-wrap: nowrap;
+    width: 200px;
+    font-size:x-large ;
 }
 
 input[type="checkbox"]{
