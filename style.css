@@ -176,6 +176,33 @@ td, th {
     margin-bottom: 120px;
 }
 
+footer {
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 60px;
+    padding: fixed;
+    border-radius: 25px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content p:first-child {
+    font-weight: bold;
+}
 
 
 /*Début responsive WIP*/
