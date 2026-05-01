@@ -156,6 +156,11 @@ input[type="checkbox"]{
     margin-inline: auto;
 }
 
+.image-center{
+    max-width: 50%;
+    margin-inline: auto;
+}
+
 table , td, th {
 	border: 1px solid black;
 }
