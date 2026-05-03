@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #ffffff;
+      --bg-surface:   #f5f5f3;
+      --text-primary: #1a1a19;
+      --text-muted:   #5f5e5a;
+      --text-hint:    #999890;
+      --border:       rgba(0,0,0,0.10);
+      --border-md:    rgba(0,0,0,0.18);
+      --accent:       #1D9E75;
+      --accent-dark:  #0F6E56;
+      --accent-light: #E1F5EE;
+      --radius-md:    8px;
+      --radius-lg:    12px;
+      --font-sans:    'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono:    'Consolas', 'Monaco', 'Courier New', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:           #1c1c1a;
+        --bg-surface:   #272725;
+        --text-primary: #eceae3;
+        --text-muted:   #b4b2a9;
+        --text-hint:    #888780;
+        --border:       rgba(255,255,255,0.10);
+        --border-md:    rgba(255,255,255,0.20);
+        --accent:       #5DCAA5;
+        --accent-dark:  #9FE1CB;
+        --accent-light: #04342C;
+      }
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      padding: 2rem 1.5rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    .header { margin-bottom: 2rem; }
+    .header h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .header p { font-size: 14px; color: var(--text-muted); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+      letter-spacing: 0.04em;
+    }
+    .badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      border-bottom: 1px solid var(--border-md);
+      margin-bottom: 1.75rem;
+    }
+    .tab-btn {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-hint);
+      background: transparent;
+      border: 1px solid transparent;
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+      padding: 9px 22px;
+      cursor: pointer;
+      letter-spacing: 0.07em;
+      position: relative;
+      bottom: -1px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .tab-btn:hover { color: var(--text-primary); background: var(--bg-surface); }
+    .tab-btn.active {
+      color: var(--accent-dark);
+      background: var(--bg);
+      border-color: var(--border-md);
+      border-bottom-color: var(--bg);
+    }
+
+    /* TAB PANELS */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* INTRO CARD */
+    .intro-card {
+      background: var(--bg-surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 13px 16px;
+      margin-bottom: 1.5rem;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .intro-card strong { color: var(--text-primary); font-weight: 600; }
+
+    /* DEFINITION GRID */
+    .def-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 8px;
+      margin-bottom: 1.5rem;
+    }
+    .def-item {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 10px 13px;
+    }
+    .def-item dt { font-family: var(--font-mono); font-size: 11px; color: var(--accent-dark); letter-spacing: 0.05em; margin-bottom: 3px; }
+    .def-item dd { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.10em;
+      color: var(--text-hint);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ARTICLE CARDS */
+    .article-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 12px;
+      transition: border-color 0.15s;
+    }
+    .article-card:hover { border-color: var(--accent); }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .card-tag {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--accent-dark);
+      background: var(--accent-light);
+      border-radius: 4px;
+      padding: 2px 9px;
+      letter-spacing: 0.05em;
+    }
+    .card-date { font-size: 11px; font-family: var(--font-mono); color: var(--text-hint); }
+    .card-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 7px; line-height: 1.4; }
+    .card-body { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-hint);
+      border-top: 1px solid var(--border);
+      padding-top: 9px;
+    }
+    .card-footer a { color: var(--accent-dark); text-decoration: none; }
+    .card-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Veille Technologique</h1>
+    <p>Réseau &amp; Sécurité — BTS SIO SISR</p>
+    <span class="badge"><span class="badge-dot"></span>Mise à jour : Mai 2025</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('sase', this)">SASE</button>
+    <button class="tab-btn" onclick="switchTab('sdwan', this)">SD-WAN</button>
+    <button class="tab-btn" onclick="switchTab('snmp', this)">SNMP</button>
+  </div>
+
+  <!-- ===== SASE ===== -->
+  <div id="panel-sase" class="tab-panel active">
+    <div class="intro-card">
+      <strong>SASE</strong> (Secure Access Service Edge) est une architecture cloud qui fusionne les fonctions réseau (SD-WAN) et de sécurité (ZTNA, SWG, CASB, FWaaS) en un service unique. Introduit par Gartner en 2019, il répond aux besoins du travail hybride en sécurisant les accès où que se trouve l'utilisateur.
+    </div>
+    <dl class="def-grid">
+      <div class="def-item"><dt>ZTNA</dt><dd>Zero Trust Network Access — aucun utilisateur n'est fiable par défaut.</dd></div>
+      <div class="def-item"><dt>SWG</dt><dd>Secure Web Gateway — filtre le trafic web malveillant.</dd></div>
+      <div class="def-item"><dt>CASB</dt><dd>Cloud Access Security Broker — contrôle l'accès aux SaaS.</dd></div>
+      <div class="def-item"><dt>FWaaS</dt><dd>Firewall as a Service — pare-feu hébergé dans le cloud.</dd></div>
+    </dl>
+    <div class="section-label">Actualités récentes</div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Avr. 2025</span></div>
+      <div class="card-title">Gartner : le marché SASE dépassera 25 milliards $ d'ici 2027</div>
+      <div class="card-body">Selon le dernier rapport Gartner, l'adoption du SASE s'accélère portée par la généralisation du travail hybride et la migration vers le cloud. Les entreprises cherchent à consolider leurs outils réseau et sécurité pour réduire la complexité et les coûts opérationnels. Palo Alto Networks, Zscaler et Cisco dominent le marché avec des plateformes SSE + SD-WAN unifiées.</div>
+      <div class="card-footer"><span>Gartner Research</span><a href="https://www.gartner.com/en/newsroom" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Mars 2025</span></div>
+      <div class="card-title">Cisco intègre l'IA générative dans sa plateforme SASE pour l'analyse des menaces</div>
+      <div class="card-body">Cisco a annoncé l'intégration de modèles d'IA générative dans Cisco+ Secure Connect, sa solution SASE unifiée. Cette fonctionnalité permet une détection proactive des menaces en analysant les comportements réseau en temps réel et génère automatiquement des recommandations de politiques de sécurité à destination des administrateurs.</div>
+      <div class="card-footer"><span>Cisco Newsroom</span><a href="https://newsroom.cisco.com" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Fév. 2025</span></div>
+      <div class="card-title">Single-Vendor SASE vs Multi-Vendor : quel modèle choisir en 2025 ?</div>
+      <div class="card-body">Un débat persiste dans les DSI : adopter une plateforme SASE d'un seul éditeur (simplification, intégration native) ou combiner les meilleurs outils du marché (meilleure flexibilité, évitement du vendor lock-in). Forrester recommande d'évaluer la maturité de la solution SSE et SD-WAN séparément avant toute décision d'unification.</div>
+      <div class="card-footer"><span>Forrester Research</span><a href="https://www.forrester.com" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+  </div>
+
+  <!-- ===== SD-WAN ===== -->
+  <div id="panel-sdwan" class="tab-panel">
+    <div class="intro-card">
+      <strong>SD-WAN</strong> (Software-Defined Wide Area Network) virtualise et optimise la gestion du réseau étendu. Contrairement au MPLS classique qui impose des chemins fixes, le SD-WAN sélectionne dynamiquement le meilleur chemin (MPLS, internet, 4G/5G) selon la qualité de la liaison et le type de trafic.
+    </div>
+    <dl class="def-grid">
+      <div class="def-item"><dt>Underlay</dt><dd>Infrastructure physique sous-jacente (MPLS, fibre, 4G…).</dd></div>
+      <div class="def-item"><dt>Overlay</dt><dd>Réseau virtuel créé au-dessus de l'underlay par le SD-WAN.</dd></div>
+      <div class="def-item"><dt>QoS</dt><dd>Priorisation du trafic critique (VoIP, vidéo, ERP).</dd></div>
+      <div class="def-item"><dt>Zero-touch</dt><dd>Déploiement automatique sans configuration manuelle sur site.</dd></div>
+    </dl>
+    <div class="section-label">Actualités récentes</div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Avr. 2025</span></div>
+      <div class="card-title">SD-WAN et 5G : une convergence qui redéfinit les réseaux d'agence</div>
+      <div class="card-body">L'essor de la 5G ouvre de nouvelles perspectives pour le SD-WAN en offrant une liaison de secours (ou principale) à très faible latence. Des acteurs comme Ericsson et Nokia proposent désormais des solutions SD-WAN nativement compatibles 5G SA (Standalone), permettant aux entreprises de connecter leurs agences distantes sans dépendre d'une infrastructure filaire coûteuse.</div>
+      <div class="card-footer"><span>ZDNet France</span><a href="https://www.zdnet.fr" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Mars 2025</span></div>
+      <div class="card-title">VMware (Broadcom) : l'avenir de VeloCloud après le rachat inquiète les clients</div>
+      <div class="card-body">Depuis le rachat de VMware par Broadcom, l'avenir de VeloCloud SD-WAN suscite des interrogations. Broadcom a recentré son portefeuille sur les grandes entreprises, poussant certains clients mid-market à migrer vers des alternatives comme Fortinet SD-WAN ou HPE Aruba EdgeConnect. Les intégrateurs conseillent d'évaluer les contrats de support avant tout renouvellement.</div>
+      <div class="card-footer"><span>Network World</span><a href="https://www.networkworld.com" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Jan. 2025</span></div>
+      <div class="card-title">AIOps et SD-WAN : l'IA automatise la gestion et l'optimisation réseau</div>
+      <div class="card-body">L'intégration de l'AIOps dans les contrôleurs SD-WAN permet d'automatiser la détection d'anomalies, la prédiction de pannes et l'optimisation des politiques de routage. Des solutions comme Juniper Mist AI ou Fortinet FortiAIOps réduisent significativement le temps moyen de résolution des incidents réseau dans les grandes infrastructures multi-sites.</div>
+      <div class="card-footer"><span>LeMagIT</span><a href="https://www.lemagit.fr" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+  </div>
+
+  <!-- ===== SNMP ===== -->
+  <div id="panel-snmp" class="tab-panel">
+    <div class="intro-card">
+      <strong>SNMP</strong> (Simple Network Management Protocol) est le protocole standard de supervision des équipements réseau IP. Il collecte des métriques (charge CPU, bande passante, erreurs) et envoie des alertes (<em>traps</em>) en cas de défaillance. SNMPv3 est la version sécurisée recommandée (authentification SHA + chiffrement AES).
+    </div>
+    <dl class="def-grid">
+      <div class="def-item"><dt>MIB</dt><dd>Management Information Base — base de données des variables supervisées.</dd></div>
+      <div class="def-item"><dt>OID</dt><dd>Object Identifier — identifiant unique d'une variable SNMP.</dd></div>
+      <div class="def-item"><dt>Trap</dt><dd>Alerte envoyée spontanément par un équipement vers le gestionnaire.</dd></div>
+      <div class="def-item"><dt>Community</dt><dd>Chaîne d'auth (v1/v2c) — remplacée par USM en SNMPv3.</dd></div>
+    </dl>
+    <div class="section-label">Actualités récentes</div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Avr. 2025</span></div>
+      <div class="card-title">L'ANSSI rappelle l'urgence de migrer de SNMPv1/v2c vers SNMPv3</div>
+      <div class="card-body">L'ANSSI a publié un guide soulignant les risques liés à SNMPv1 et v2c, dont les community strings circulent en clair sur le réseau. Des scans automatisés exploitent régulièrement des équipements exposés avec la community "public" par défaut. La migration vers SNMPv3 avec authentification SHA-256 et chiffrement AES est fortement recommandée pour tout équipement accessible.</div>
+      <div class="card-footer"><span>ANSSI</span><a href="https://www.ssi.gouv.fr" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Fév. 2025</span></div>
+      <div class="card-title">Zabbix 7.0 : collecte SNMP optimisée et support natif des SNMP Traps en haute dispo</div>
+      <div class="card-body">La version 7.0 de Zabbix introduit un moteur SNMP revu avec support amélioré des MIB personnalisées, collecte bulk optimisée et gestion native des SNMP Traps en haute disponibilité. Ces évolutions simplifient la supervision de parcs hétérogènes (Cisco, Juniper, HP) sans recours à des agents supplémentaires sur les équipements.</div>
+      <div class="card-footer"><span>Zabbix Blog</span><a href="https://blog.zabbix.com" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Jan. 2025</span></div>
+      <div class="card-title">SNMP vs OpenTelemetry : vers un remplacement progressif dans les environnements cloud-native ?</div>
+      <div class="card-body">Si SNMP reste incontournable pour la supervision des équipements physiques, OpenTelemetry s'impose dans les environnements conteneurisés (Kubernetes, microservices). Les équipes réseau doivent aujourd'hui maîtriser les deux approches, et des outils comme Grafana permettent d'unifier ces sources dans un même tableau de bord de supervision.</div>
+      <div class="card-footer"><span>InfoQ</span><a href="https://www.infoq.com" target="_blank" rel="noopener">Lire ↗</a></div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
