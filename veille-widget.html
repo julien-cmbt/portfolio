@@ -172,6 +172,18 @@
       padding: 2px 9px;
       letter-spacing: 0.05em;
     }
+    .card-tag-alert {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      border-radius: 4px;
+      padding: 2px 9px;
+      letter-spacing: 0.05em;
+      color: #791f1f;
+      background: #fcebeb;
+    }
+    @media (prefers-color-scheme: dark) {
+      .card-tag-alert { color: #f7c1c1; background: #501313; }
+    }
     .card-date { font-size: 11px; font-family: var(--font-mono); color: var(--text-hint); }
     .card-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 7px; line-height: 1.4; }
     .card-body { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; }
@@ -194,7 +206,7 @@
   <div class="header">
     <h1>Veille Technologique</h1>
     <p>Réseau &amp; Sécurité — BTS SIO SISR</p>
-    <span class="badge"><span class="badge-dot"></span>Mise à jour : Mai 2025</span>
+    <span class="badge"><span class="badge-dot"></span>Période couverte : Mai 2025 – Avril 2026</span>
   </div>
 
   <div class="tabs">
@@ -214,27 +226,27 @@
       <div class="def-item"><dt>CASB</dt><dd>Cloud Access Security Broker — contrôle l'accès aux SaaS.</dd></div>
       <div class="def-item"><dt>FWaaS</dt><dd>Firewall as a Service — pare-feu hébergé dans le cloud.</dd></div>
     </dl>
-    <div class="section-label">Actualités récentes</div>
+    <div class="section-label">Actualités — Mai 2025 à Avril 2026</div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Avr. 2025</span></div>
-      <div class="card-title">Gartner : le marché SASE dépassera 25 milliards $ d'ici 2027</div>
-      <div class="card-body">Selon le dernier rapport Gartner, l'adoption du SASE s'accélère portée par la généralisation du travail hybride et la migration vers le cloud. Les entreprises cherchent à consolider leurs outils réseau et sécurité pour réduire la complexité et les coûts opérationnels. Palo Alto Networks, Zscaler et Cisco dominent le marché avec des plateformes SSE + SD-WAN unifiées.</div>
-      <div class="card-footer"><span>Gartner Research</span><a href="https://www.gartner.com/en/newsroom" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Fév. 2026</span></div>
+      <div class="card-title">Cisco Live Amsterdam : Cisco déploie un SASE « conscient de l'IA » pour sécuriser les agents autonomes</div>
+      <div class="card-body">Lors du Cisco Live EMEA à Amsterdam, Cisco a annoncé des avancées majeures pour sa plateforme SASE, incluant une inspection du trafic d'IA agentique et une optimisation des flux lors des pics de charge. La solution intègre désormais une visibilité sur les protocoles MCP (Model Context Protocol) et une politique unifiée SD-WAN + SSE pour gouverner les interactions entre agents IA et outils externes. Cisco positionne cette évolution comme une réponse directe à la montée des architectures d'IA autonome en entreprise.</div>
+      <div class="card-footer"><span>Cisco Newsroom</span><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/cisco-launches-breakthrough-innovations-for-the-ai-era.html" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Mars 2025</span></div>
-      <div class="card-title">Cisco intègre l'IA générative dans sa plateforme SASE pour l'analyse des menaces</div>
-      <div class="card-body">Cisco a annoncé l'intégration de modèles d'IA générative dans Cisco+ Secure Connect, sa solution SASE unifiée. Cette fonctionnalité permet une détection proactive des menaces en analysant les comportements réseau en temps réel et génère automatiquement des recommandations de politiques de sécurité à destination des administrateurs.</div>
-      <div class="card-footer"><span>Cisco Newsroom</span><a href="https://newsroom.cisco.com" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Sept. 2025</span></div>
+      <div class="card-title">Forrester Wave SASE Q3 2025 : le marché se consolide autour de plateformes unifiées single-vendor</div>
+      <div class="card-body">Le rapport Forrester Wave SASE Q3 2025 marque une rupture nette avec l'édition 2023 : plus de 20 éditeurs proposent désormais des plateformes SASE tout-en-un intégrant nativement SD-WAN, SSE et ZTNA. Seuls huit d'entre eux ont satisfait aux critères d'inclusion stricts : Cato Networks, Cloudflare, Fortinet, Netskope, Palo Alto Networks, SonicWall, Versa Networks et Zscaler. La différenciation se déplace vers l'IA, la prévention des pertes de données (DLP) et la gestion de l'expérience numérique.</div>
+      <div class="card-footer"><span>Forrester Research</span><a href="https://www.forrester.com/blogs/forrester-wave-secure-access-service-edge-solutions-q3-2025-a-market-transformed/" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Fév. 2025</span></div>
-      <div class="card-title">Single-Vendor SASE vs Multi-Vendor : quel modèle choisir en 2025 ?</div>
-      <div class="card-body">Un débat persiste dans les DSI : adopter une plateforme SASE d'un seul éditeur (simplification, intégration native) ou combiner les meilleurs outils du marché (meilleure flexibilité, évitement du vendor lock-in). Forrester recommande d'évaluer la maturité de la solution SSE et SD-WAN séparément avant toute décision d'unification.</div>
-      <div class="card-footer"><span>Forrester Research</span><a href="https://www.forrester.com" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SASE</span><span class="card-date">Jan. 2026</span></div>
+      <div class="card-title">2026, l'année charnière pour le SASE managé : 72 % des entreprises signalent une hausse du cyber-risque</div>
+      <div class="card-body">D'après le Global Cybersecurity Outlook 2025 du Forum Économique Mondial, 72 % des organisations rapportent une augmentation du cyber-risque depuis 2024. Le rapport Verizon 2025 indique que les ransomwares sont présents dans 44 % des violations, en hausse de 37 %. Face à la pénurie de talents (67 % des entreprises signalent un manque critique de compétences cyber), les MSSP et les solutions SASE managées s'imposent comme la réponse privilégiée des DSI et RSSI.</div>
+      <div class="card-footer"><span>Hughes Networks / WEF</span><a href="https://www.hughes.com/resources/insights/cybersecurity/why-2026-tipping-point-managed-sase" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
   </div>
 
@@ -249,27 +261,27 @@
       <div class="def-item"><dt>QoS</dt><dd>Priorisation du trafic critique (VoIP, vidéo, ERP).</dd></div>
       <div class="def-item"><dt>Zero-touch</dt><dd>Déploiement automatique sans configuration manuelle sur site.</dd></div>
     </dl>
-    <div class="section-label">Actualités récentes</div>
+    <div class="section-label">Actualités — Mai 2025 à Avril 2026</div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Avr. 2025</span></div>
-      <div class="card-title">SD-WAN et 5G : une convergence qui redéfinit les réseaux d'agence</div>
-      <div class="card-body">L'essor de la 5G ouvre de nouvelles perspectives pour le SD-WAN en offrant une liaison de secours (ou principale) à très faible latence. Des acteurs comme Ericsson et Nokia proposent désormais des solutions SD-WAN nativement compatibles 5G SA (Standalone), permettant aux entreprises de connecter leurs agences distantes sans dépendre d'une infrastructure filaire coûteuse.</div>
-      <div class="card-footer"><span>ZDNet France</span><a href="https://www.zdnet.fr" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Avr. 2026</span></div>
+      <div class="card-title">Le marché SD-WAN atteint 12 milliards $ en 2026 avec un CAGR de 31 %, porté par le multi-cloud et l'IA</div>
+      <div class="card-body">Selon le rapport ResearchAndMarkets publié en avril 2026, le marché SD-WAN mondial est passé de 9,17 milliards $ en 2025 à 12,03 milliards $ en 2026, avec un taux de croissance annuel composé de 31,2 %. Les principales tendances identifiées sont l'optimisation réseau par IA/ML, les déploiements hybrides, et l'émergence des technologies quantique-sûres pour le chiffrement des tunnels WAN. L'Asie-Pacifique est la région à la croissance la plus rapide, tirée par la digitalisation des PME.</div>
+      <div class="card-footer"><span>ResearchAndMarkets / GlobeNewswire</span><a href="https://www.globenewswire.com/news-release/2026/04/01/3266492/28124/en/Software-Defined-Wide-Area-Network-SD-WAN-Market-to-Witness-31-CAGR-Through-2026-2030-Amid-Increasing-Cloud-Adoption-and-the-Need-for-Secure-Scalable-Networking-Solutions.html" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Mars 2025</span></div>
-      <div class="card-title">VMware (Broadcom) : l'avenir de VeloCloud après le rachat inquiète les clients</div>
-      <div class="card-body">Depuis le rachat de VMware par Broadcom, l'avenir de VeloCloud SD-WAN suscite des interrogations. Broadcom a recentré son portefeuille sur les grandes entreprises, poussant certains clients mid-market à migrer vers des alternatives comme Fortinet SD-WAN ou HPE Aruba EdgeConnect. Les intégrateurs conseillent d'évaluer les contrats de support avant tout renouvellement.</div>
-      <div class="card-footer"><span>Network World</span><a href="https://www.networkworld.com" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Juil. 2025</span></div>
+      <div class="card-title">Arista Networks acquiert VeloCloud et lance des solutions Cloud WAN optimisées par l'IA</div>
+      <div class="card-body">Arista Networks a annoncé le 1er juillet 2025 l'acquisition de VeloCloud (anciennement VMware SD-WAN) et le lancement de solutions Cloud WAN optimisées pour l'IA. Cette acquisition repositionne Arista sur le marché du SD-WAN managé en cloud et offre une alternative solide aux clients inquiets du recentrage de Broadcom sur les grandes entreprises après le rachat de VMware. Les nouvelles solutions intègrent une orchestration SD-WAN nativement cloud pour les déploiements multi-sites à grande échelle.</div>
+      <div class="card-footer"><span>Arista Networks Blog</span><a href="https://blogs.arista.com" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Jan. 2025</span></div>
-      <div class="card-title">AIOps et SD-WAN : l'IA automatise la gestion et l'optimisation réseau</div>
-      <div class="card-body">L'intégration de l'AIOps dans les contrôleurs SD-WAN permet d'automatiser la détection d'anomalies, la prédiction de pannes et l'optimisation des politiques de routage. Des solutions comme Juniper Mist AI ou Fortinet FortiAIOps réduisent significativement le temps moyen de résolution des incidents réseau dans les grandes infrastructures multi-sites.</div>
-      <div class="card-footer"><span>LeMagIT</span><a href="https://www.lemagit.fr" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SD-WAN</span><span class="card-date">Juin 2025</span></div>
+      <div class="card-title">Nokia signe un accord SD-WAN pluriannuel avec Telefónica pour transformer la connectivité entreprise</div>
+      <div class="card-body">En juin 2025, Nokia a conclu un partenariat stratégique pluriannuel avec Telefónica pour déployer sa solution Nuage Networks SD-WAN à l'échelle de la clientèle entreprise de l'opérateur. Le déploiement s'appuie sur une architecture SD-WAN pilotée par des politiques permettant une connectivité scalable et une gestion centralisée. Cet accord illustre la tendance des grands opérateurs télécoms européens à intégrer le SD-WAN comme offre managée clé pour leurs clients corporate.</div>
+      <div class="card-footer"><span>MarketsandMarkets</span><a href="https://www.marketsandmarkets.com/Market-Reports/software-defined-wan-market-53110642.html" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
   </div>
 
@@ -284,27 +296,27 @@
       <div class="def-item"><dt>Trap</dt><dd>Alerte envoyée spontanément par un équipement vers le gestionnaire.</dd></div>
       <div class="def-item"><dt>Community</dt><dd>Chaîne d'auth (v1/v2c) — remplacée par USM en SNMPv3.</dd></div>
     </dl>
-    <div class="section-label">Actualités récentes</div>
+    <div class="section-label">Actualités — Mai 2025 à Avril 2026</div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Avr. 2025</span></div>
-      <div class="card-title">L'ANSSI rappelle l'urgence de migrer de SNMPv1/v2c vers SNMPv3</div>
-      <div class="card-body">L'ANSSI a publié un guide soulignant les risques liés à SNMPv1 et v2c, dont les community strings circulent en clair sur le réseau. Des scans automatisés exploitent régulièrement des équipements exposés avec la community "public" par défaut. La migration vers SNMPv3 avec authentification SHA-256 et chiffrement AES est fortement recommandée pour tout équipement accessible.</div>
-      <div class="card-footer"><span>ANSSI</span><a href="https://www.ssi.gouv.fr" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag card-tag-alert">VULNERABILITÉ CRITIQUE</span><span class="card-date">Sept. 2025</span></div>
+      <div class="card-title">CVE-2025-20352 : faille SNMP activement exploitée dans Cisco IOS et IOS XE — jusqu'à 2 millions d'équipements exposés</div>
+      <div class="card-body">Le 24 septembre 2025, Cisco a divulgué une vulnérabilité critique (CVSS 7.7) dans le sous-système SNMP de Cisco IOS et IOS XE. Un attaquant distant authentifié peut provoquer un déni de service ou, avec des privilèges élevés, exécuter du code arbitraire en root. Toutes les versions SNMP (v1, v2c, v3) sont affectées. La faille a été activement exploitée, ajoutée au catalogue CISA KEV le 29 septembre. Cisco recommande de patcher immédiatement vers IOS XE 17.15.4a et de restreindre l'accès SNMP aux seuls hôtes de confiance.</div>
+      <div class="card-footer"><span>Cisco PSIRT / CyberScoop</span><a href="https://cyberscoop.com/cisco-ios-xe-snmp-vulnerability-september-2025/" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Fév. 2025</span></div>
-      <div class="card-title">Zabbix 7.0 : collecte SNMP optimisée et support natif des SNMP Traps en haute dispo</div>
-      <div class="card-body">La version 7.0 de Zabbix introduit un moteur SNMP revu avec support amélioré des MIB personnalisées, collecte bulk optimisée et gestion native des SNMP Traps en haute disponibilité. Ces évolutions simplifient la supervision de parcs hétérogènes (Cisco, Juniper, HP) sans recours à des agents supplémentaires sur les équipements.</div>
-      <div class="card-footer"><span>Zabbix Blog</span><a href="https://blog.zabbix.com" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag card-tag-alert">VULNERABILITÉ CRITIQUE</span><span class="card-date">Déc. 2025</span></div>
+      <div class="card-title">CVE-2025-68615 : débordement de tampon critique dans Net-SNMP — toutes les versions affectées</div>
+      <div class="card-body">Le 23 décembre 2025, une vulnérabilité critique (CVSS 9.8) a été divulguée dans la suite logicielle Net-SNMP, impactant le démon snmptrapd. Un paquet spécialement forgé peut provoquer un débordement de tampon et planter le service, voire permettre une prise de contrôle du système. Toutes les versions de Net-SNMP avant 5.9.5 et 5.10.pre2 sont vulnérables. Les administrateurs sont invités à mettre à jour immédiatement et à sécuriser les accès SNMP Trap depuis les réseaux non fiables.</div>
+      <div class="card-footer"><span>SC Media / Cyber Security News</span><a href="https://www.scworld.com/brief/takeovers-possible-with-critical-net-snmp-vulnerability" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
 
     <div class="article-card">
-      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Jan. 2025</span></div>
-      <div class="card-title">SNMP vs OpenTelemetry : vers un remplacement progressif dans les environnements cloud-native ?</div>
-      <div class="card-body">Si SNMP reste incontournable pour la supervision des équipements physiques, OpenTelemetry s'impose dans les environnements conteneurisés (Kubernetes, microservices). Les équipes réseau doivent aujourd'hui maîtriser les deux approches, et des outils comme Grafana permettent d'unifier ces sources dans un même tableau de bord de supervision.</div>
-      <div class="card-footer"><span>InfoQ</span><a href="https://www.infoq.com" target="_blank" rel="noopener">Lire ↗</a></div>
+      <div class="card-top"><span class="card-tag">SNMP</span><span class="card-date">Jan. 2026</span></div>
+      <div class="card-title">Les vulnérabilités SNMP de 2025 rappellent l'urgence de migrer vers SNMPv3 et de durcir les configurations</div>
+      <div class="card-body">Les deux failles critiques SNMP découvertes fin 2025 (CVE-2025-20352 sur Cisco IOS et CVE-2025-68615 sur Net-SNMP) ont mis en évidence les risques persistants liés à l'utilisation de community strings par défaut ("public") et à l'exposition SNMP sur Internet. Les experts recommandent : migrer vers SNMPv3 avec authentification SHA-256 et chiffrement AES, restreindre SNMP aux VLANs de gestion, et utiliser des ACLs strictes. Les outils PRTG et Zabbix, qui utilisent leurs propres implémentations SNMP, n'étaient pas directement affectés par ces CVE.</div>
+      <div class="card-footer"><span>Paessler Blog / CERT-EU</span><a href="https://blog.paessler.com/closing-out-2025-why-the-net-snmp-vulnerability-matters-to-your-network" target="_blank" rel="noopener">Lire ↗</a></div>
     </div>
   </div>
 
